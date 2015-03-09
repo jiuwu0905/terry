@@ -1,9 +1,10 @@
 #!/bin/bash
 set -eo pipefail
 
-version=${GOVERSION:-1.1.2}
-srcfile=${GOFILE:-go$version.$(uname|tr A-Z a-z)-amd64.tar.gz}
-url=${GOURL:-https://storage.googleapis.com/golang/$srcfile}
+
+version=${GOVERSION:-1.2.2}
+srcfile=${GOFILE:-go$ver.$(uname|tr A-Z a-z)-amd64.tar.gz}
+url=${GOURL:-https://storage.googleapis.com/golang/$file}
 dist=${GODIST:-$OPENSHIFT_DIY_DIR/cache/go-$version}
 
 if [ -d $dist/go ]; then
